@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: ./
+      dockerfile: dockerfile
+    image: php:laravel
+    container_name: backend
+    restart: always
+    ports:
+      - "9090:80"
+    volumes:
+      - "./:/var/www"
+    working_dir: /var/www
