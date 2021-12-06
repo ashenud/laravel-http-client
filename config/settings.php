@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'per_pgae' => env('SETTING_PER_PAGE', 50),
-    'pgae' => env('SETTING_PAGE', 1),
+    'per_page' => env('SETTING_PER_PAGE', 50),
+    'page' => env('SETTING_PAGE', 1),
 
 ];

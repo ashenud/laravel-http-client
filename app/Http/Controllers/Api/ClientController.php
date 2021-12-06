@@ -11,12 +11,12 @@ class ClientController extends Controller
     public function customer_list(Request $request, $client_uuid){
         $token = $request->bearerToken();
         $url = config('settings.api_source').'/api/clients/'.$client_uuid.'/customers';
-        $per_pgae = $request->perPgae ? $request->perPgae : config('settings.per_page');
-        $pgae = $request->page ? $request->page : config('settings.page');
+        $per_page = $request->perPage ? $request->perPage : config('settings.per_page');
+        $page = $request->page ? $request->page : config('settings.page');
 
         $response = Http::withToken($token)->get($url, [
-            'perPgae' => $per_pgae,
-            'page' => $pgae,
+            'perPage' => $per_page,
+            'page' => $page,
         ]);
         return $response;
     }
